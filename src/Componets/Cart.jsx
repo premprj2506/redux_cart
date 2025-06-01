@@ -28,8 +28,8 @@ const Cart = () => {
       <div className="flex flex-col justify-center items-center text-center py-8 px-4">
         <h3 className="text-2xl font-extrabold mb-4">Your cart is empty.</h3>
         <button
-          onClick={() => navigate("/")}
-          className="text-lg font-bold text-white bg-[#5A827E] w-full max-w-xs rounded-md py-2"
+          onClick={() => navigate("/redux_cart")}
+          className="text-lg font-bold text-white bg-[#5A827E] w-full max-w-xs rounded-md py-2 transition transform duration-100 active:scale-90"
         >
           Start Shopping
         </button>
@@ -64,13 +64,22 @@ const Cart = () => {
                 </div>
 
                 <div className="bg-[#84AE92] w-full sm:w-[25%] flex justify-evenly items-center py-2 text-xl lg:rounded-tl-md lg:rounded-bl-md">
-                  <button onClick={() => dispatch(increaseQuantity(item.id))}>
+                  <button
+                    className="transition transform duration-100 active:scale-90"
+                    onClick={() => dispatch(increaseQuantity(item.id))}
+                  >
                     <FaPlus />
                   </button>
-                  <button onClick={() => dispatch(decreaseQuantity(item.id))}>
+                  <button
+                    className="transition transform duration-100 active:scale-90"
+                    onClick={() => dispatch(decreaseQuantity(item.id))}
+                  >
                     <FaMinus />
                   </button>
-                  <button onClick={() => dispatch(removeItem(item.id))}>
+                  <button
+                    className="transition transform duration-100 active:scale-90"
+                    onClick={() => dispatch(removeItem(item.id))}
+                  >
                     <MdDelete />
                   </button>
                 </div>

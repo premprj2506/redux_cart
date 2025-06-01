@@ -12,7 +12,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/redux_cart" element={<ProductList />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/redux_cart/cart" element={<Cart />} />
         </Routes>
       </div>
     </Provider>
