@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   increaseQuantity,
   decreaseQuantity,
@@ -39,9 +38,9 @@ const Cart = () => {
 
   return (
     <div className="bg-[#FAFFCA] w-full px-4 sm:px-6 lg:px-12 py-4">
-      <h2 className="text-2xl font-bold mb-4 flex items-center">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center">
         Your Cart
-        <span className="pl-2 text-3xl">
+        <span className="pl-2 text-2xl sm:text-3xl">
           <HiOutlineShoppingCart />
         </span>
       </h2>
@@ -55,15 +54,26 @@ const Cart = () => {
                 key={item.id}
                 className="flex flex-col sm:flex-row items-center justify-between bg-[#B9D4AA] rounded-md overflow-hidden"
               >
-                <div className="flex items-center w-full sm:w-[75%]">
-                  <span className="w-10 sm:w-[10%] h-16 bg-[#5A827E]"></span>
-                  <div className="px-4 py-2 text-base sm:text-lg">
-                    <strong>{item.name}</strong> – ₹{item.price} ×{" "}
-                    {item.quantity} = ₹{item.price * item.quantity}
+                <div className="flex items-center w-full sm:w-[75%] p-2 sm:p-4">
+                  <div className="w-24 h-24 bg-white p-1 flex-shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="px-3 sm:px-4 text-sm sm:text-base md:text-lg break-words">
+                    <strong>{item.title}</strong>
+                    <div>
+                      ₹{item.price} × {item.quantity} ={" "}
+                      <strong>
+                        ₹{(item.price * item.quantity).toFixed(2)}
+                      </strong>
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-[#84AE92] w-full sm:w-[25%] flex justify-evenly items-center py-2 text-xl lg:rounded-tl-md lg:rounded-bl-md">
+                <div className="bg-[#84AE92] w-full sm:w-[25%] flex justify-evenly items-center py-2 text-lg sm:text-xl">
                   <button
                     className="transition transform duration-100 active:scale-90"
                     onClick={() => dispatch(increaseQuantity(item.id))}
@@ -89,11 +99,13 @@ const Cart = () => {
         </div>
 
         {/* Summary */}
-        <div className="bg-[#B9D4AA] w-full lg:w-[30%] rounded-md flex flex-col items-center p-4">
-          <h3 className="text-3xl font-extrabold mb-4">Total: ₹{getTotal()}</h3>
+        <div className="bg-[#B9D4AA] w-full lg:w-[30%] rounded-md flex flex-col items-center p-4 text-center">
+          <h3 className="text-2xl sm:text-3xl font-extrabold mb-4">
+            Total: ₹{getTotal().toFixed(2)}
+          </h3>
 
           <button
-            className="text-lg font-bold text-white bg-[#5A827E] w-full rounded-md py-2"
+            className="text-base sm:text-lg font-bold text-white bg-[#5A827E] w-full rounded-md py-2 transition transform duration-100 active:scale-95"
             onClick={() => dispatch(clearCart())}
           >
             Clear Cart
