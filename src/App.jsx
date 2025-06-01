@@ -1,4 +1,5 @@
 import Cart from "./Componets/Cart";
+
 import Navbar from "./Componets/Navbar";
 import ProductList from "./Componets/ProductList";
 import { store } from "./redux/Store";

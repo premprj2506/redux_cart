@@ -15,9 +15,9 @@ const Product = ({ item, handleAddToCart }) => {
       {/* Add to Cart Button */}
       <button
         onClick={() => handleAddToCart(item)}
-        className="px-4 py-2 bg-[#5A827E] text-white font-bold hover:bg-[#46655F] transition-colors"
+        className="cursor-pointer px-4 py-2 bg-[#5A827E] text-white font-bold hover:bg-[#46655F] transition-colors"
       >
-        Add to Cart
+        Add to cart
       </button>
     </div>
   );

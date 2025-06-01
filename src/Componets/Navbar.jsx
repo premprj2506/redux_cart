@@ -12,12 +12,16 @@ const Navbar = () => {
     <div className="flex justify-between items-center bg-[#84AE92] w-full h-16 sm:h-20 px-4 sm:px-6 lg:px-8 mx-auto rounded-xl mb-4 overflow-hidden relative">
       <h1 className="text-[#FAFFCA] font-extrabold tracking-[4px] text-3xl sm:text-4xl lg:text-5xl flex items-center">
         <span
-          className="w-12 sm:w-16 flex justify-center text-4xl sm:text-5xl mr-2"
+          className="rounded-full overflow-hidden w-10 sm:w-14 flex justify-center text-4xl sm:text-5xl mr-4"
           onClick={() => navigate("/redux_cart")}
         >
-          <TbHexagonLetterN />
+          <img
+            src="https://media.istockphoto.com/id/1276423485/vector/shopping-bag-design-icon-shopping-logo-shop-concept-vector-illustration.jpg?s=612x612&w=0&k=20&c=zIXXDNLbrUdXx7LqKcRjxEzO8KUXzvZnh26IvkKngkU="
+            alt="logo"
+            className=" object-cover scale-[1.5]"
+          />
         </span>
-        <span className="hidden sm:inline">NISHA SHOPPING CART</span>
+        <span className="hidden sm:inline">SHOPPING CART</span>
         <span className="sm:hidden">CART</span>
       </h1>
       <div className="relative">
