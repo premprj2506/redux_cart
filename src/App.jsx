@@ -11,7 +11,7 @@ const App = () => {
       <div className="w-full min-h-screen bg-[#FAFFCA] pt-6 px-4 sm:px-6 lg:px-12 flex flex-col">
         <Navbar />
         <Routes>
-          <Route path="/" element={<ProductList />} />
+          <Route path="/redux_cart" element={<ProductList />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
